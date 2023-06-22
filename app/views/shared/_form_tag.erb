@@ -1,0 +1,33 @@
+<pre style="border: 1px solid black;box-sizing: border-box;padding: 10px;">
+&lt;%= form_tag("/users") do -%&gt;
+  &lt;%= label_tag(:username2, "User name: ") %&gt;
+  &lt;%= text_field_tag('user[username]', nil, id: "username2") %&gt;
+  &lt;br&gt;
+
+  &lt;%= label_tag(:email2, "E-mail: ") %&gt;
+  &lt;%= email_field_tag('user[email]', nil, id: "email2") %&gt;
+  &lt;br&gt;
+
+  &lt;%= label_tag(:password2, "Password: ") %&gt;
+  &lt;%= password_field_tag('user[password]', nil, id: "password2") %&gt;
+  &lt;br&gt;
+
+  &lt;%= submit_tag 'Create User' %&gt;
+&lt;% end -%&gt;
+</pre>
+
+<%= form_tag("/users") do -%>
+  <%= label_tag(:username2, "User name: ") %>
+  <%= text_field_tag('user[username]', nil, id: "username2") %>
+  <br>
+
+  <%= label_tag(:email2, "E-mail: ") %>
+  <%= email_field_tag('user[email]', nil, id: "email2") %>
+  <br>
+
+  <%= label_tag(:password2, "Password: ") %>
+  <%= password_field_tag('user[password]', nil, id: "password2") %>
+  <br>
+
+  <%= submit_tag 'Create User' %>
+<% end -%>

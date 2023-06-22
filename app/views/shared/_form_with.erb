@@ -1,0 +1,47 @@
+<pre style="border: 1px solid black;box-sizing: border-box;padding: 10px;">
+&lt;%= form_with model: @user do |f| %&gt;
+  &lt;%= f.label :username, for: "username3"  %&gt;
+  &lt;%= f.text_field :username, id: "username3" %&gt;
+  &lt;br/&gt;
+
+  &lt;%= f.label :email, for: "email3" %&gt;
+  &lt;%= f.email_field :email, id: "email3" %&gt;
+  &lt;br/&gt;
+
+  &lt;%= f.label :password, for:"password3" %&gt;
+  &lt;%= f.password_field :password, id: "password3" %&gt;
+  &lt;br/&gt;
+
+  &lt;%= f.submit "Create User" %&gt;
+&lt;% end %&gt;
+</pre>
+
+<%= form_with model: @user do |f| %>
+  <!-- error catching -->
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> prohibited
+        this user from being saved:
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.label :username, for: "username3" %>
+  <%= f.text_field :username, id: "username3" %>
+  <br/>
+
+  <%= f.label :email, for: "email3" %>
+  <%= f.email_field :email, id: "email3" %>
+  <br/>
+
+  <%= f.label :password, for: "password3" %>
+  <%= f.password_field :password, id: "password3" %>
+  <br/>
+
+  <%= f.submit "Create User" %>
+<% end %>
